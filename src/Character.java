@@ -122,8 +122,18 @@ public class Character{
 		return notTalksTo;
 	}
 	
-	
 	public boolean equalsC(Character other) {
 		return other.getName().equals(this.getName());
+	}
+	
+	public boolean talksTo(Character other) {
+		if(Utils.contains(other.getTalksTo(), this)) {
+			return true;
+		}
+		if(Utils.contains(this.getTalksTo(), other)) {
+			return true;
+		}
+		
+		return false;
 	}
 }

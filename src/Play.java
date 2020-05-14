@@ -42,35 +42,6 @@ public class Play{
 	    			j++;
 	    		}
 	    		String full = play.substring(i, j);
-//	    		if(full.indexOf(" ") != -1) {
-//	    			int firstSpace = full.indexOf(" ");
-//	    			String firstWord = full.substring(i, firstSpace);
-//	    			if(firstSpace+1 < full.length()) {
-//	    				String secondHalf = full.substring(firstSpace + 1);
-//	    				
-//	    				int secondSpace = secondHalf.indexOf(" ");
-//	    				String secondWord = "";
-//	    				if(secondSpace != -1) {
-//	    					secondWord = secondHalf.substring(0, secondSpace).trim();
-//	    				}
-//	    				if(secondWord.length() < 2) {
-//    						full = firstWord;
-//    					} else {
-//    						full = firstWord + " " + secondWord;
-//    					}
-//	    			}
-//	    			
-//	    		}
-//	    		if(full.indexOf(" ") != -1) {
-//	    			String firstWord = full.substring(i, full.indexOf(" "));
-//		    		String secondHalf = full.substring(full.indexOf(" ")+1);
-//		    		String secondWord = secondHalf.substring(0, full.indexOf(" "));
-//		    		if(secondWord.length() < 2) {
-//		    			full = firstWord;
-//		    		} else {
-//		    			full = firstWord + " " + secondWord;
-//		    		}
-//	    		}
 	    		lineOrder.add(full.trim());
 	    		i = j;
 	    	} else {

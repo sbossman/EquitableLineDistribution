@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Utils{
 	public static boolean isUpperAndSpace(char c) {
 		char[] a = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
@@ -14,6 +16,15 @@ public class Utils{
 		for(char t: a) {
 			if(t == c)
 				return true;
+		}
+		return false;
+	}
+	
+	public static boolean contains(ArrayList<Character> arr, Character c) {
+		for(int i = 0; i < arr.size(); i++) {
+			if(arr.get(i).equalsC(c)) {
+				return true;
+			}
 		}
 		return false;
 	}
