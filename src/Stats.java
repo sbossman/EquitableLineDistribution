@@ -62,6 +62,8 @@ public class Stats{
 		Play p = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\Shakespeare\\src\\txt\\Ham4-5.txt");
 		
 		System.out.println("AVG LINES: " + avgLines(p));
-		System.out.println("Standard Deviaton: " + stanDev(p));
+		for(Character c: getMinorCharacters(p)) {
+			System.out.println(c);
+		}
 	}
 }
