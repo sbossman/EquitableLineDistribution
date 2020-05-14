@@ -12,7 +12,7 @@ public class Test{
 		ArrayList<Character> characters = p.getCharacters();
 		for(Character c: characters) {
 			System.out.print(c + ": ");
-			System.out.println(c.getTalksTo());
+			System.out.println(c.getNotTalksTo());
 		}
 	}
 }

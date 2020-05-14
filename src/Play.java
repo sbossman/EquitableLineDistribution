@@ -29,6 +29,7 @@ public class Play{
 	    setCharacters();
 	    for(int i = 0; i < characters.size(); i++) {
 	    	characters.get(i).setTalksTo(this);
+	    	characters.get(i).setNotTalksTo(this);
 	    }
 	}
 	

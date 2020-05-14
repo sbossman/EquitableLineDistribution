@@ -89,6 +89,19 @@ public class Character{
 			}
 		}
 	}
+	public void setNotTalksTo(Play play) {
+		for(int i = 0; i < play.characters.size(); i++) {
+			boolean flag = false;
+			for(int j = 0; j < talksTo.size(); j++) {
+				if(play.characters.get(i).equalsC(talksTo.get(j))) {
+					flag = true;
+				}
+			}
+			if(flag == false) {
+				notTalksTo.add(play.characters.get(i));
+			}
+		}
+	}
 	
 	public String toString() {
 		return name + ": " + lineNum;
@@ -105,6 +118,11 @@ public class Character{
 	public ArrayList<Character> getTalksTo(){
 		return talksTo;
 	}
+	public ArrayList<Character> getNotTalksTo(){
+		return notTalksTo;
+	}
+	
+	
 	public boolean equalsC(Character other) {
 		return other.getName().equals(this.getName());
 	}
