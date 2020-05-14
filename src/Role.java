@@ -41,4 +41,11 @@ public class Role{
 		lines = ln;
 		return ln;
 	}
+	
+	public String toString() {
+		return name + characters;
+	}
+	public ArrayList<Character> getCharacters(){
+		return characters;
+	}
 }

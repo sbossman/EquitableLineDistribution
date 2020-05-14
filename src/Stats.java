@@ -7,14 +7,20 @@ import java.io.RandomAccessFile;
 import java.math.*;
 
 public class Stats{
-	public static double avgLines(Play play) {
+	public static int totalLines(Play play) {
 		int lineTotal = 0;
 		for(int i = 0; i < play.getCharacters().size(); i++) {
 			if(!play.getCharacters().get(i).getName().equals("ACT")) {
 				lineTotal += play.getCharacters().get(i).getLineNum();
 			}
 		}
-		return lineTotal/((double)play.getCharacters().size()-1);
+		return lineTotal;
+	}
+	public static int linesPerPerson(Play play, int readers) {
+		return (int)((totalLines(play)/(double) readers) + 0.5);
+	}
+	public static double avgLines(Play play) {
+		return totalLines(play)/((double)play.getCharacters().size()-1);
 	}
 	public static double stanDev(Play play) {
 		double avg = avgLines(play);
@@ -61,9 +67,10 @@ public class Stats{
 		//C:\Users\summe\eclipse-workspace\Shakespeare\src\txt
 		Play p = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\Shakespeare\\src\\txt\\Ham4-5.txt");
 		
-		System.out.println("AVG LINES: " + avgLines(p));
-		for(Character c: getMinorCharacters(p)) {
-			System.out.println(c);
-		}
+//		System.out.println("AVG LINES: " + avgLines(p));
+//		for(Character c: getMinorCharacters(p)) {
+//			System.out.println(c);
+//		}
+		System.out.println(linesPerPerson(p, 5));
 	}
 }
