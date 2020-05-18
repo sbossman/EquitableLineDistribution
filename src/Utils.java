@@ -28,4 +28,13 @@ public class Utils{
 		}
 		return false;
 	}
+	
+	public static int indexOf(ArrayList<Character> arr, String s) {
+		for(int i = 0; i < arr.size(); i++) {
+			if(arr.get(i).getName().equals(s)) {
+				return i;
+			}
+		}
+		return -1;
+	}
 }

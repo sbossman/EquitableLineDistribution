@@ -19,6 +19,13 @@ public class Stats{
 	public static int linesPerPerson(Play play, int readers) {
 		return (int)((totalLines(play)/(double) readers) + 0.5);
 	}
+	public static double linesPerPerson(ArrayList<Character> characters, int readers) {
+		int total = 0;
+		for(Character c: characters) {
+			total+= c.getLineNum();
+		}
+		return ((double)total)/readers;
+	}
 	public static double avgLines(Play play) {
 		return totalLines(play)/((double)play.getCharacters().size()-1);
 	}

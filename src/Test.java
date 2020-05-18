@@ -13,25 +13,23 @@ public class Test{
 		Play p = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\Shakespeare\\src\\txt\\Ham4-5.txt");
 		ArrayList<Character> characters = p.getCharacters();
 		ArrayList<Character> minorCharacters = Stats.getMinorCharacters(p);
+		ArrayList<Character> majorCharacters = Stats.getMajorCharacters(p);
 		
 		
+		characters.remove(Utils.indexOf(characters, "HAMLET"));
+		System.out.println(Stats.linesPerPerson(characters, 6));
 		
-		Role role1 = new Role("Horatio");
-		System.out.println(p.getCharacter("HORATIO").getTalksTo());
-		role1.addChar(p.getCharacter("HORATIO"));
-		role1.addChar(p.getCharacter("LORD"));
-		role1.addChar(p.getCharacter("OPHELIA"));
-		role1.addChar(p.getCharacter("DOCTOR"));
-		System.out.println(role1.contradicts());
-		System.out.println(role1.countLines());
+//		
+//		
+//		Role role1 = new Role("Horatio");
+//		System.out.println(p.getCharacter("HORATIO").getTalksTo());
+//		role1.addChar(p.getCharacter("HORATIO"));
+//		role1.addChar(p.getCharacter("LORD"));
+//		role1.addChar(p.getCharacter("OPHELIA"));
+//		role1.addChar(p.getCharacter("DOCTOR"));
+//		System.out.println(role1.contradicts());
+//		System.out.println(role1.countLines());
 		
 		
-//		for(Character c: characters) {
-//			System.out.print(c + ": ");
-//			System.out.println(c.getTalksTo());
-//		}
-//		System.out.println(p.getCharacter("LORD").getTalksTo());
-//		System.out.println(p.getCharacter("GUILDENSTERN").getTalksTo());
-//		System.out.println(p.getCharacter("LORD").talksTo(p.getCharacter("GUILDENSTERN")));
 	}
 }

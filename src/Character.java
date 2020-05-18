@@ -127,13 +127,16 @@ public class Character{
 	}
 	
 	public boolean talksTo(Character other) {
-		if(Utils.contains(other.getTalksTo(), this)) {
+		if(other.getTalksTo().contains(this)) {
 			return true;
 		}
-		if(Utils.contains(this.getTalksTo(), other)) {
+		if(this.getTalksTo().contains(other)) {
 			return true;
 		}
 		
 		return false;
+	}
+	public int getNumTalkedTo() {
+		return talksTo.size();
 	}
 }

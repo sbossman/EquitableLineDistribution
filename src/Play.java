@@ -32,6 +32,26 @@ public class Play{
 	    	characters.get(i).setNotTalksTo(this);
 	    }
 	}
+	public Play(String location) throws FileNotFoundException{
+		title = "Play";
+		
+		//Sets play to the script
+		File p = new File(location);
+		Scanner sc = new Scanner(p); 
+	    while (sc.hasNextLine()) {
+	    	play += sc.nextLine() + "\n";
+	    }
+	    sc.close();
+	    
+	    
+	    setLineOrder();
+	    setCast();
+	    setCharacters();
+	    for(int i = 0; i < characters.size(); i++) {
+	    	characters.get(i).setTalksTo(this);
+	    	characters.get(i).setNotTalksTo(this);
+	    }
+	}
 	
 	private void setLineOrder() {
 		int i = 0;
