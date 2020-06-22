@@ -39,14 +39,14 @@ public class AssignCharacters{
         for (int i = 0; i < n-1; i++) {
             for (int j = 0; j < n-i-1; j++) {
                 if (arr.get(j).getNumTalkedTo() < arr.get(j+1).getNumTalkedTo()){ 
-                    // swap arr[j+1] and arr[i] 
+                    // swap the two
                     Character temp = arr.get(j); 
                     arr.set(j, arr.get(j+1)); 
                     arr.set(j+1, temp); 
                 } 
                 if (arr.get(j).getNumTalkedTo() == arr.get(j+1).getNumTalkedTo() && fineSort) {
                 	if (arr.get(j).getLineNum() > arr.get(j+1).getLineNum()){ 
-                        // swap arr[j+1] and arr[i] 
+                        // swap the two 
                         Character temp = arr.get(j); 
                         arr.set(j, arr.get(j+1)); 
                         arr.set(j+1, temp); 
@@ -58,7 +58,6 @@ public class AssignCharacters{
 	}
 	private ArrayList<Role> rolesNotTalksTo(Character character) {
 		ArrayList<Role> ntt = new ArrayList<Role>(5);
-		// System.out.println(character.getName() + " " + character.getTalksTo());
 		for(Role r : roles) {
 			boolean flag = true;
 			for(Character c : r.getCharacters()) {
@@ -73,12 +72,7 @@ public class AssignCharacters{
 		return ntt;
 	}
 	
-	public ArrayList<Role> assignRoles(boolean fineSort) {
-//		ArrayList<Role> roles = new ArrayList<Role>(numRoles);
-//		for(int i = 0; i < numRoles; i++) {
-//			roles.add(new Role("r" + i));
-//		}
-		
+	public ArrayList<Role> assignRoles(boolean fineSort) {		
 		ArrayList<Character> untaken = new ArrayList<Character>(80);
 		for(Character c: play.getCharacters()) {
 			untaken.add(c);
@@ -106,7 +100,6 @@ public class AssignCharacters{
 				System.out.println();
 				break;
 			}
-			//System.out.println(notTalksTo);
 			
 			Role leastLines = notTalksTo.get(0);
 			
@@ -122,7 +115,6 @@ public class AssignCharacters{
 		
 		
 		
-		//Prints out the Role assignments
 		System.out.println("Reading Role Assignments: ");
 		
 		return roles;

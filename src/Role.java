@@ -121,7 +121,15 @@ public class Role{
 	}
 	
 	public String toString() {
-		return name + characters;
+		String s = name + ": ";
+		if(characters.size() < 2) {
+			return s + characters.get(0).getName();
+		}
+		for(int i = 0; i < characters.size()-2; i++) {
+			s+= characters.get(i).getName() + ", ";
+		}
+		s+= "and " + characters.get(characters.size()-1).getName();
+		return s;
 	}
 	public ArrayList<Character> getCharacters(){
 		return characters;
