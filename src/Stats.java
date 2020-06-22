@@ -1,10 +1,5 @@
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.List;
 import java.util.ArrayList;
-import java.io.RandomAccessFile;
-import java.math.*;
 
 public class Stats{
 	public static int totalLines(Play play) {
@@ -39,6 +34,17 @@ public class Stats{
 		}
 		
 		return devSum/((double)play.getCharacters().size()-1);
+	}
+	
+	public static double stanDevRoles(Play play, ArrayList<Role> roles) {
+		double avg = linesPerPerson(play, roles.size());
+		double devSum = 0;
+		
+		for(Role r: roles) {
+			devSum += Math.abs(r.countLines()  - avg);
+		}
+		
+		return devSum/((double)roles.size());
 	}
 	
 	public static ArrayList<Character> getMajorCharacters(Play play){

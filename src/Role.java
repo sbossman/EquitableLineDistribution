@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.ArrayList;
 
 public class Role{
@@ -29,6 +28,15 @@ public class Role{
 	public void removeChar(int i) {
 		characters.remove(i);
 		countLines();
+	}
+	public void removeChar(Character c) {
+		for(int i = 0; i < characters.size(); i++) {
+			if(c.equalsC(characters.get(i))) {
+				characters.remove(i);
+				countLines();
+				return;
+			}
+		}
 	}
 	public int countLines() {
 		int ln = 0;

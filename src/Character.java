@@ -1,6 +1,3 @@
-import java.io.File;
-import java.util.Scanner;
-import java.util.List;
 import java.util.ArrayList;
 
 public class Character{
@@ -104,7 +101,7 @@ public class Character{
 	}
 	
 	public String toString() {
-		return name + ": " + lineNum;
+		return name + ": " + lineNum + " : " + getNumTalkedTo();
 	}
 	public String getName() {
 		return name;
