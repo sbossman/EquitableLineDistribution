@@ -1,3 +1,4 @@
+package classes;
 import java.util.ArrayList;
 
 public class Character{
@@ -85,6 +86,13 @@ public class Character{
 				}
 			}
 		}
+		for(int i = 0; i < talksTo.size(); i++) {
+			//Takes out oneself from the list of people they talk to
+			if(talksTo.get(i).getName().equals(this.name)) {
+				talksTo.remove(i);
+				i--;
+			}
+		}
 	}
 	public void setNotTalksTo(Play play) {
 		for(int i = 0; i < play.characters.size(); i++) {
@@ -101,7 +109,7 @@ public class Character{
 	}
 	
 	public String toString() {
-		return name + ": " + lineNum + " : " + getNumTalkedTo();
+		return name + ": " + lineNum;
 	}
 	public String getName() {
 		return name;
@@ -111,6 +119,48 @@ public class Character{
 	}
 	public ArrayList<String> getLines() {
 		return lines;
+	}
+	public int getNumWords(String play) {
+		setLines(play);
+		int numWords = 0;
+		for(String line: lines) {
+			boolean flag = true;
+			char prevChar = '.';
+			for(int i = 0; i < line.length(); i++) {
+				//System.out.println(line.charAt(i));
+				if(flag && prevChar != ' ' && (line.charAt(i) == ' ' || line.charAt(i) == '\n')) {
+					numWords++;
+				} else if(line.charAt(i) == '[') {
+					flag = false;
+				} else if(line.charAt(i) == ']') {
+					flag = true;
+				}
+				prevChar = line.charAt(i);
+			}
+		}
+		return numWords;
+	}
+	public int getNumWords() {
+		int numWords = 0;
+		for(String line: lines) {
+			boolean flag = true;
+			char prevChar = '.';
+			for(int i = 0; i < line.length(); i++) {
+				//System.out.println(line.charAt(i));
+				if(flag && prevChar != ' ' && (line.charAt(i) == ' ' || line.charAt(i) == '\n')) {
+					numWords++;
+				} else if(line.charAt(i) == '[') {
+					flag = false;
+				} else if(line.charAt(i) == ']') {
+					flag = true;
+				}
+				prevChar = line.charAt(i);
+			}
+		}
+		return numWords;
+	}
+	public double getAvgLineLength() {
+		return getNumWords()/(double)getLineNum();
 	}
 	public ArrayList<Character> getTalksTo(){
 		return talksTo;

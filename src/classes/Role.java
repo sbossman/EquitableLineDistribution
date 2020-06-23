@@ -1,3 +1,4 @@
+package classes;
 import java.util.ArrayList;
 
 public class Role{
@@ -5,6 +6,7 @@ public class Role{
 	private String name;
 	private int lines;
 	private int principalCharacter;
+	private int words;
 	
 	public Role(ArrayList<Character> arr) {
 		characters = arr;
@@ -45,6 +47,14 @@ public class Role{
 		}
 		lines = ln;
 		return ln;
+	}
+	public int countWords() {
+		int wd = 0;
+		for(int i = 0; i < characters.size(); i++) {
+			wd += characters.get(i).getNumWords();
+		}
+		words = wd;
+		return wd;
 	}
 	public void setPrincipalChar() {
 		int m = 0;

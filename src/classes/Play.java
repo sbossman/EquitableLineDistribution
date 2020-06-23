@@ -1,3 +1,4 @@
+package classes;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -123,11 +124,18 @@ public class Play{
 		character = character.toUpperCase();
 		for(int i = 0; i < characters.size(); i++) {
 			if(characters.get(i).getName().equals(character)) {
-				System.out.println("Character found!");
-				System.out.println(characters.get(i));
 				return characters.get(i).getLines();
 			}
 		}
 		return new ArrayList<String>();
+	}
+	public int getCharacterNumWords(String character){
+		character = character.toUpperCase();
+		for(int i = 0; i < characters.size(); i++) {
+			if(characters.get(i).getName().equals(character)) {
+				return characters.get(i).getNumWords(this.play);
+			}
+		}
+		return 0;
 	}
 }

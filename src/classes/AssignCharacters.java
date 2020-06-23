@@ -1,3 +1,6 @@
+package classes;
+
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -34,7 +37,7 @@ public class AssignCharacters{
 		}
 	}
 	
-	private static ArrayList<Character> orderCharacters(ArrayList<Character> arr, boolean fineSort){
+	private static ArrayList<Character> orderCharacters(ArrayList<Character> arr, boolean fineSort, String sortBy){
 		int n = arr.size(); 
         for (int i = 0; i < n-1; i++) {
             for (int j = 0; j < n-i-1; j++) {
@@ -44,8 +47,16 @@ public class AssignCharacters{
                     arr.set(j, arr.get(j+1)); 
                     arr.set(j+1, temp); 
                 } 
-                if (arr.get(j).getNumTalkedTo() == arr.get(j+1).getNumTalkedTo() && fineSort) {
+                if (arr.get(j).getNumTalkedTo() == arr.get(j+1).getNumTalkedTo() && fineSort && sortBy.equals("lines")) {
                 	if (arr.get(j).getLineNum() > arr.get(j+1).getLineNum()){ 
+                        // swap the two 
+                        Character temp = arr.get(j); 
+                        arr.set(j, arr.get(j+1)); 
+                        arr.set(j+1, temp); 
+                    }
+                }
+                if (arr.get(j).getNumTalkedTo() == arr.get(j+1).getNumTalkedTo() && fineSort && sortBy.contentEquals("words")) {
+                	if (arr.get(j).getNumWords() > arr.get(j+1).getNumWords()){ 
                         // swap the two 
                         Character temp = arr.get(j); 
                         arr.set(j, arr.get(j+1)); 
@@ -72,7 +83,7 @@ public class AssignCharacters{
 		return ntt;
 	}
 	
-	public ArrayList<Role> assignRoles(boolean fineSort) {		
+	public ArrayList<Role> assignRoles(boolean fineSort, String sortBy) {		
 		ArrayList<Character> untaken = new ArrayList<Character>(80);
 		for(Character c: play.getCharacters()) {
 			untaken.add(c);
@@ -84,7 +95,7 @@ public class AssignCharacters{
 				i--;
 			}
 		}
-		untaken = orderCharacters(untaken, fineSort);
+		untaken = orderCharacters(untaken, fineSort, sortBy);
 		System.out.println(untaken);
 		
 		
@@ -101,15 +112,29 @@ public class AssignCharacters{
 				break;
 			}
 			
-			Role leastLines = notTalksTo.get(0);
-			
-			for(Role r: notTalksTo) {
-				if(r.countLines() < leastLines.countLines()) {
-					leastLines = r;
+			Role least = notTalksTo.get(0);
+			if(sortBy == "lines") {
+				for(Role r: notTalksTo) {
+					if(r.countLines() < least.countLines()) {
+						least = r;
+					}
+				}
+			} else if(sortBy == "words") {
+				for(Role r: notTalksTo) {
+					if(r.countWords() < least.countWords()) {
+						least = r;
+					}
+				}
+			} else {
+				for(Role r: notTalksTo) {
+					if(r.countLines() < least.countLines()) {
+						least = r;
+					}
 				}
 			}
+				
 			
-			leastLines.addChar(play.getCharacter(currChar));
+			least.addChar(play.getCharacter(currChar));
 			untaken.remove(0);
 		}
 		

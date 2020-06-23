@@ -1,4 +1,4 @@
-import java.io.FileNotFoundException;
+package classes;
 import java.util.ArrayList;
 
 public class Stats{
@@ -33,7 +33,7 @@ public class Stats{
 			}
 		}
 		
-		return devSum/((double)play.getCharacters().size()-1);
+		return devSum/((double)play.getCharacters().size());
 	}
 	
 	public static double stanDevRoles(Play play, ArrayList<Role> roles) {
@@ -75,15 +75,5 @@ public class Stats{
 	public static int numMajorCharacters(Play play) {
 		return getMajorCharacters(play).size();
 	}
-	
-	public static void main(String[] args) throws FileNotFoundException{
-		//C:\Users\summe\eclipse-workspace\Shakespeare\src\txt
-		Play p = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\Shakespeare\\src\\txt\\Ham4-5.txt");
-		
-//		System.out.println("AVG LINES: " + avgLines(p));
-//		for(Character c: getMinorCharacters(p)) {
-//			System.out.println(c);
-//		}
-		System.out.println(linesPerPerson(p, 5));
-	}
+
 }
