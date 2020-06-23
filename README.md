@@ -1,8 +1,13 @@
 # Line Distribution
 
 ## Purpose
-**The purpose of this program is to equitably distribute lines for play read throughs.** 
+**The primary purpose of this program is to equitably distribute lines for play read throughs.** 
+Equitable line distribution is not the only intent for this program, however. It also
+has options for you to see how many speeches a character has, how many words they speak,
+their lines, and similar things. You may do similar studies on the assigned roles for
+read throughs. For full capabilities, see below.
 
+## Motivation
 I was doing Shakespeare read throughs and soon discovered that it was difficult to 
 distribute lines evenly among 5-6 people to do a read through, and still have no
 one talk to each other. As a result, I decided to write a program that could equally
@@ -11,10 +16,10 @@ for putting on an actual play. There are probably several times where someone pl
 characters who are on stage at the same time. It was simply intended to never create
 a scenario where people are talking to themselves during a read through.
 
-Equitable line distribution is not the only intent for this program, however. It also
-has options for you to see how many speeches a character has, how many words they speak,
-their lines, and similar things. You may do similar studies on the assigned roles for
-read throughs. For full capabilities, see below.
+## Installation
+You have to be able to run Java in order for this project to work. After that, download
+it I guess. In any files which use the code, put `import classes.*` at the top, if you're
+doing it in Java. 
 
 ## Usage
 ### Play File Formatting Specifications
@@ -35,3 +40,7 @@ the file "AssignRoles.java" in the examples folder. Run this in the command prom
 and it'll provide prompts and you can go from there. When it says "play location", you
 must put the location from the root. For examples of location series that work, see
 the other examples files. It'll then print out role assignments.
+
+## Contributing
+Opening issues is perfectly welcome.
+Pull requests are welcome, but please test changes before you use it.
