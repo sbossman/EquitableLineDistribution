@@ -2,6 +2,7 @@
 
 ## Purpose
 **The purpose of this program is to equitably distribute lines for play read throughs.** 
+
 I was doing Shakespeare read throughs and soon discovered that it was difficult to 
 distribute lines evenly among 5-6 people to do a read through, and still have no
 one talk to each other. As a result, I decided to write a program that could equally
