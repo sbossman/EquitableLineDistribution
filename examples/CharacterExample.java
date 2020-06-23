@@ -4,7 +4,7 @@ import classes.Character;
 
 public class CharacterExample{
 	public static void main(String[] args) throws FileNotFoundException{
-		Play play = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\hamlet.txt");
+		Play play = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\plays\\hamlet.txt");
 		Character hamlet = play.getCharacter("HAMLET");
 		
 		//Prints out all of Hamlet's lines:
