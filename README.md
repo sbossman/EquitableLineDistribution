@@ -42,8 +42,7 @@ must put the location from the root. For examples of location series that work, 
 the other examples files. It'll then print out role assignments.
 
 ## Contributing
-Opening issues is perfectly welcome.
-Pull requests are welcome, but please test changes before you use it.
+Opening issues and using pull requests are perfectly welcome.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
