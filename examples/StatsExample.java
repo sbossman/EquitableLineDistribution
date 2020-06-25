@@ -4,7 +4,8 @@ import classes.Stats;
 
 public class StatsExample{
 	public static void main(String args[]) throws FileNotFoundException{
-		Play play = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\plays\\hamlet.txt");
+		Play play = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\play\\hamlet.txt");
+		//C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\plays\\hamlet.txt
 		
 		System.out.println("The average character speaks " + Stats.avgLines(play) + " lines total, with a standard deviation of " +
 							Stats.stanDev(play));
