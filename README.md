@@ -36,14 +36,15 @@ each class.
 
 ### Line Distribution
 If you would simply like to receive role distributions and nothing else, then use
-the file "AssignRoles.java" in the examples folder. Run this in the command prompt,
-and it'll provide prompts and you can go from there. When it says "play location", you
-must put the location from the root. For examples of location series that work, see
-the other examples files. It'll then print out role assignments.
+the file "AssignRoles.java" in the examples folder. Run this in the command prompt using the 
+command `java -jar AssignRoles.jar`, and it'll provide prompts and you can go from there.
+When it says "play location", you must put the location from the root. For examples of location
+series that work, see the other examples files. It'll then print out role assignments.
+*Note: The AssignRoles.java file is only intended to figure out assigning roles and nothing*
+*else. If you want a more personalized experience, use the Java classes and methods.*
 
 ## Contributing
-Opening issues is perfectly welcome.
-Pull requests are welcome, but please test changes before you use it.
+Opening issues and using pull requests are perfectly welcome.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
