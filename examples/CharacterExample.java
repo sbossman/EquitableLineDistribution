@@ -3,7 +3,7 @@ import classes.Play;
 import classes.Character;
 
 public class CharacterExample{
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String args[]) throws FileNotFoundException{
 		Play play = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\hamlet.txt");
 		Character hamlet = play.getCharacter("HAMLET");
 		

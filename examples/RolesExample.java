@@ -7,7 +7,7 @@ import classes.Role;
 import java.util.ArrayList;
 
 public class RolesExample{
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String args[]) throws FileNotFoundException{
 		String title = "Hamlet";
 		String loc = "C:\\\\Users\\\\summe\\\\eclipse-workspace\\\\EquitableLineDistribution\\\\hamlet.txt";
 		int readers = 7;

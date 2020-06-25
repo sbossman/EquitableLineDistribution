@@ -113,6 +113,7 @@ public class Play{
 		}
 		return null;
 	}
+	
 	public int getCharacterIndex(String name) {
 		for(int i = 0; i < characters.size(); i++) {
 			if(characters.get(i).getName().equals(name))

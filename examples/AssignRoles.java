@@ -8,7 +8,7 @@ import classes.Role;
 import java.util.ArrayList;
 
 public class AssignRoles{
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String args[]) throws FileNotFoundException{
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Title of play: ");
 		String title = keyboard.nextLine();

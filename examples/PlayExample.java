@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import classes.Play;
 
 public class PlayExample{
-	public static void main(String[] args) throws FileNotFoundException{
+	public static void main(String args[]) throws FileNotFoundException{
 		Play play = new Play("Hamlet", "C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\hamlet.txt");
 		
 		System.out.println("The play " + play.getTitle() + "'s cast is: " + play.getCast());
