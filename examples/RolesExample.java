@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class RolesExample{
 	public static void main(String args[]) throws FileNotFoundException{
 		String title = "Hamlet";
-		String loc = "C:\\\\Users\\\\summe\\\\eclipse-workspace\\\\EquitableLineDistribution\\\\hamlet.txt";
+		String loc = "C:\\Users\\summe\\eclipse-workspace\\EquitableLineDistribution\\plays\\hamlet.txt";
 		int readers = 7;
 		String assignBy = "words"; // Words or lines
 		
